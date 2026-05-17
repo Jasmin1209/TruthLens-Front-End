@@ -1,0 +1,131 @@
+.denuncia-page{
+
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px 15px;
+}
+
+.denuncia-form{
+
+    width: 100%;
+    max-width: 850px;
+
+    background:
+        rgba(12,18,44,0.7);
+
+    border:
+        1px solid rgba(255,255,255,0.08);
+
+    border-radius: 24px;
+
+    padding: 30px;
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 0 30px rgba(79,70,229,0.15);
+}
+
+.denuncia-form h1{
+
+    color: white;
+
+    font-size: 2.5rem;
+    font-weight: 700;
+
+    margin-bottom: 15px;
+}
+
+.denuncia-form p{
+
+    color: #94A3B8;
+
+    line-height: 1.8;
+
+    margin-bottom: 35px;
+}
+
+.denuncia-form .form-label{
+    color: #CBD5E1;
+}
+
+.denuncia-form .form-control{
+
+    background:
+        rgba(255,255,255,0.03);
+
+    border:
+        1px solid rgba(255,255,255,0.08);
+
+    border-radius: 16px;
+
+    color: white;
+}
+
+.denuncia-form input{
+    height: 60px;
+}
+
+.denuncia-form textarea{
+
+    height: 180px;
+
+    resize: none;
+}
+
+.denuncia-form .form-control::placeholder{
+    color: #94A3B8;
+}
+
+.denuncia-form .form-control:focus{
+
+    background:
+        rgba(255,255,255,0.04);
+
+    color: white;
+
+    border-color:
+        #6366F1;
+
+    box-shadow:
+        0 0 15px rgba(99,102,241,0.3);
+}
+
+.denuncia-btn{
+
+    width: 100%;
+
+    height: 65px;
+
+    border-radius: 16px !important;
+
+    border: none !important;
+
+    background: linear-gradient(
+        90deg,
+        #2563EB,
+        #7C3AED
+    ) !important;
+
+    color: white !important;
+
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+
+    margin-top: 15px;
+}
+
+@media(min-width:768px){
+
+    .denuncia-form{
+        padding: 50px;
+    }
+
+    .denuncia-form h1{
+        font-size: 3rem;
+    }
+}
