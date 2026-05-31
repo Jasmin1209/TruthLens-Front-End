@@ -4,6 +4,13 @@ import "../assets/css/navbar.css";
 
 function Navbar(){
 
+    const usuarioLogado = localStorage.getItem("usuario");
+
+    function logout(){
+        localStorage.removeItem("usuario");
+        window.location.href = "/";
+    }
+
     return(
 
         <nav
@@ -29,6 +36,9 @@ function Navbar(){
                     type="button"
                     data-bs-toggle="collapse"
                     data-bs-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
                 >
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -50,27 +60,56 @@ function Navbar(){
                             Home
                         </Link>
 
-                        <Link
-                            className="nav-link"
-                            to="/login"
-                        >
-                            Login
-                        </Link>
+                         {/* USUÁRIO NÃO LOGADO */}
 
-                        <Link
-                            className="nav-link"
-                            to="/denuncia"
-                        >
-                            Denúncia
-                        </Link>
+                        {
+                            !usuarioLogado ? (
+                                <>
+                                    <Link
+                                        className="nav-link"
+                                        to="/login"
+                                    >
+                                        Login
+                                    </Link>
 
-                        <Link
-                            className="nav-link"
-                            to="/detector"
-                        >
-                            Detector
-                        </Link>
+                                    <Link
+                                        className="nav-link cadastro-btn"
+                                        to="/cadastro"
+                                    >
+                                        Cadastro
+                                    </Link>
+                                </>
+                            ) : (
+                                <>
+                                    {/* DETECTOR */}
 
+                                    <Link
+                                        className="nav-link"
+                                        to="/detector"
+                                    >
+                                        Detector
+                                    </Link>
+
+                                    {/* DENUNCIA */}
+
+                                    <Link
+                                        className="nav-link"
+                                        to="/denuncia"
+                                    >
+                                        Denúncia
+                                    </Link>
+
+                                    {/* LOGOUT */}
+                                    <button
+                                        className="logout-btn"
+                                        onClick={logout}
+                                    >
+                                        Sair
+                                    </button>
+                                </>
+                            )
+                        }
+                        
                     </div>
 
                 </div>

@@ -4,78 +4,122 @@ import "../assets/css/login.css";
 
 function LoginForm(){
 
-    const [email, setEmail] =
-        useState("");
+    const [email, setEmail] = useState("");
+    const [senha, setSenha] = useState("");
 
-    const [senha, setSenha] =
-        useState("");
+    function entrar(e){
+        e.preventDefault();
 
-    function entrar(event){
+        localStorage.setItem(
+            "usuario",
+            JSON.stringify({
+                email
+            })
+        );
 
-        event.preventDefault();
-
-        alert("Login realizado");
+        window.location.href = "/";
     }
 
     return(
 
-        <section className="login-page container-fluid">
+        <div className="login-page">
 
-            <form
-                className="login-form"
-                onSubmit={entrar}
-            >
+            <div className="login-container">
 
-                <h1>
-                    Login
-                </h1>
+                {/* LADO ESQUERDO */}
 
-                <div className="mb-4">
+                <div className="login-left">
 
-                    <label className="form-label">
-                        Email
-                    </label>
+                    <div className="overlay-shapes"></div>
 
-                    <input 
-                        type="email"
-                        className="form-control"
-                        placeholder="Digite seu email"
-                        value={email}
-                        onChange={(e)=>
-                            setEmail(e.target.value)
-                        }
-                    />
+                    <div className="login-left-content">
+
+                        <h1>Bem-Vindo!</h1>
+
+                        <p>
+                            Faça login e comece a combater a Fake News
+                        </p>
+
+                    </div>
 
                 </div>
 
-                <div className="mb-4">
+                {/* LADO DIREITO */}
 
-                    <label className="form-label">
-                        Senha
-                    </label>
+                <div className="login-right">
 
-                    <input 
-                        type="password"
-                        className="form-control"
-                        placeholder="Digite sua senha"
-                        value={senha}
-                        onChange={(e)=>
-                            setSenha(e.target.value)
-                        }
-                    />
+                    <h2>Login</h2>
+
+                    <form onSubmit={entrar}>
+
+                        <div className="input-group">
+
+                            <i className="bi bi-person"></i>
+
+                            <input
+                                type="email"
+                                placeholder="Email"
+                                value={email}
+                                onChange={(e)=>setEmail(e.target.value)}
+                                required
+                            />
+
+                        </div>
+
+                        <div className="input-group">
+
+                            <i className="bi bi-lock"></i>
+
+                            <input
+                                type="password"
+                                placeholder="Senha"
+                                value={senha}
+                                onChange={(e)=>setSenha(e.target.value)}
+                                required
+                            />
+
+                        </div>
+
+                        <div className="login-options">
+
+                            <label>
+
+                                <input type="checkbox" />
+
+                                Me lembre
+
+                            </label>
+
+                            <a href="#">
+                                Esqueceu a senha?
+                            </a>
+
+                        </div>
+
+                        <button
+                            type="submit"
+                            className="btn-login"
+                        >
+                            Login
+                        </button>
+
+                    </form>
+
+                    <p className="register-text">
+
+                        Novo por aqui?
+
+                        <span>
+                            Crie uma conta
+                        </span>
+
+                    </p>
 
                 </div>
 
-                <button
-                    type="submit"
-                    className="btn login-btn"
-                >
-                    Entrar
-                </button>
+            </div>
 
-            </form>
-
-        </section>
+        </div>
     );
 }
 

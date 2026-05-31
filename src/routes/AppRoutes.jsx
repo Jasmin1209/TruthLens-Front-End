@@ -8,6 +8,7 @@ import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Denuncia from "../pages/Denuncia";
 import Detector from "../pages/Detector";
+import Cadastro from "../pages/Cadastro";
 
 function AppRoutes(){
 
@@ -35,6 +36,11 @@ function AppRoutes(){
                 <Route
                     path="/detector"
                     element={<Detector />}
+                />
+
+                <Route
+                    path="/cadastro"
+                    element={<Cadastro />}
                 />
 
             </Routes>

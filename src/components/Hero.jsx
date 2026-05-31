@@ -20,22 +20,24 @@ function Hero(){
                     um ambiente mais seguro e confiável.
                 </p>
 
-                <div className="hero-buttons">
+                <div className="hero-info">
 
-                    <Link
-                        to="/detector"
-                        className="btn hero-btn hero-btn-primary"
-                    >
+                    <h1 className="btn hero-btn hero-btn-primary">
                         Analisar notícia
-                    </Link>
+                        <p>
+                            O TruthLens ajuda usuários a identificar possíveis fake news
+                            e denunciar conteúdos suspeitos de forma rápida e segura.
+                        </p>
+                    </h1>
+                    
 
-                    <Link
-                        to="/denuncia"
-                        className="btn hero-btn hero-btn-secondary"
-                    >
+                    <h1 className="btn hero-btn hero-btn-secondary">
                         Fazer denúncia
-                    </Link>
-
+                        <p>
+                            O TruthLens ajuda usuários a denunciarem importunação
+                            pública de forma anônima e segura.
+                        </p>
+                    </h1>
                 </div>
 
             </div>
